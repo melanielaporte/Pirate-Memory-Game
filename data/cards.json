@@ -1,38 +1,38 @@
 [
     {
-        "image": "../assets/chili.png",
-        "name": "chili"
+        "image": "../assets/eyepatch.png",
+        "name": "eyepatch"
     },
     {
-        "image": "../assets/grapes.png",
-        "name": "grapes"
+        "image": "../assets/handhook.png",
+        "name": "handhook"
     },
     {
-        "image": "../assets/lemon.png",
-        "name": "lemon"
+        "image": "../assets/map.png",
+        "name": "map"
     },
     {
-        "image": "../assets/orange.png",
-        "name": "orange"
+        "image": "../assets/spyglass.png",
+        "name": "spyglass"
     },
     {
-        "image": "../assets/pineapple.png",
-        "name": "pineapple"
+        "image": "../assets/wheel.png",
+        "name": "wheel"
     },
     {
-        "image": "../assets/strawberry.png",
-        "name": "strawberry"
+        "image": "../assets/hat.png",
+        "name": "hat"
     },
     {
-        "image": "../assets/tomato.png",
-        "name": "tomato"
+        "image": "../assets/bird.png",
+        "name": "bird"
     },
     {
-        "image": "../assets/watermelon.png",
-        "name": "watermelon"
+        "image": "../assets/chest.png",
+        "name": "chest"
     },
     {
-        "image": "../assets/cherries.png",
-        "name": "cherries"
+        "image": "../assets/hook.png",
+        "name": "hook"
     }
 ]
