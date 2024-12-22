@@ -1,3 +1,89 @@
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: #12181f;
+  color: white;
+  background-image: url('assets/background.png');
+  background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    padding: 8px 16px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: white;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: 180px; /* Equal height and width for a perfect circle */
+  width: 180px;
+  border-radius: 50%; /* Make the card circular */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden; /* Ensure no content spills outside the circle */
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 50%; /* Make them circular */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to center perfectly */
+    height: 100%; /* Ensure they fill the .card */
+    width: 100%;  /* Ensure they fill the .card */
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background-image: url("assets/coinback.png");
+  background-position: center center;
+  background-size: cover;
+}
+.card.flipped {
+  transform: rotateY(180deg); /* Flip the card when this class is added */
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+.front-image {
+  width: 60px;
+  height: 60px;
+}
 
 
 
