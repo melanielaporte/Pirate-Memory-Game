@@ -32,7 +32,7 @@
         "name": "wheel"
     },
     {
-        "image": "../assets/coinBack.png",
-        "name": "coinBack"
+        "image": "../assets/wheel.png",
+        "name": "wheel"
     }
 ]
