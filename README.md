@@ -3,7 +3,7 @@
 Pirate's Booty is a pirate themed tiny game that calculates how many moves it takes for a player to finish the game. 
 This project is made using HTML,CSS and JavaScript.
 
-![Screenshot Capture - 2024-12-22 - 22-31-13](https://github.com/user-attachments/assets/1ab34088-fea8-4b5a-8caa-3193882a53e7)
+![Screenshot Capture - 2024-12-23 - 02-00-09](https://github.com/user-attachments/assets/fc0d7d27-5f14-4f67-bb97-acc557b38b70)
 
 
 
