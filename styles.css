@@ -73,9 +73,9 @@ body {
   background-size: cover;
   backface-visibility: hidden;
  }
- 
+
  .card.flipped {
-  transform: rotateY(180deg); /* Flip the card when this class is added */
+  transform: rotateY(180deg); /* Flip the card added */
  }
  
  .card .front {
