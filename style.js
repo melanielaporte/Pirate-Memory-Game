@@ -51,6 +51,7 @@ function flipCard() {
   if (this === firstCard) return;
 
   this.classList.add("flipped");
+  console.log("Card flipped:", this);  // Log to check
 
   if (!firstCard) {
     firstCard = this;

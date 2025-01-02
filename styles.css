@@ -10,6 +10,7 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 50px;
+    text-decoration: underline;
     font-family: "Pirata One", serif;
  }
  
@@ -45,53 +46,43 @@ body {
  
  
  .card {
-  height: 180px; /* Equal height and width for a perfect circle */
-  width: 180px;
-  border-radius: 50%; /* Make the card circular */
-  position: relative;
-  transform-style: preserve-3d;
-  transition: all 0.5s ease-in-out;
-  overflow: hidden; /* Ensure no content spills outside the circle */
+   width: 180px;  /* Set the width for the card */
+   height: 270px;  /* Set the height for the card */
+   position: relative;
+   transform-style: preserve-3d;
+   transition: all 0.5s ease-in-out;
+   overflow: hidden;  /* Prevents any content from spilling out */
  }
  
- 
- .front, .back {
-    backface-visibility: hidden;
-    position: absolute;
-    border-radius: 50%;  /* Make them circular */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust positioning to center perfectly */
-    height: 100%; /* Ensure they fill the .card */
-    width: 100%;  /* Ensure they fill the .card */
+ .card .front, .card .back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;  /* Ensure both front and back fill the card */
+   height: 100%; /* Ensure both front and back fill the card */
+   backface-visibility: hidden;  /* Hide the back when flipped */
  }
  
  .card .back {
-  background-image: url("assets/cardback.png");
-  background-position: center center;
-  background-size: cover;
-  backface-visibility: hidden;
+   background-image: url("assets/cardback.png");
+   background-position: center;
+   background-size: cover;
+   transform: rotateY(0deg);
  }
-
- .card.flipped {
-  transform: rotateY(180deg); /* Flip the card added */
+ 
+ .card.flipped .back {
+   transform: rotateY(180deg);
  }
  
  .card .front {
+   transform: rotateY(180deg);  /* Hide the front when flipped */
    display: flex;
    justify-content: center;
    align-items: center;
-  }
-  
- .card .front {
-  transform: rotateY(180deg);
  }
  
- 
- .front-image {
-  width: 60px;
-  height: 60px;
+ .card .front img {
+   width: 120px;  /* Adjust image size to fit nicely in the card */
+   height: 120px;
  }
  
-
-
