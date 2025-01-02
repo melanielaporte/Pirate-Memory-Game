@@ -1,48 +1,101 @@
-// let=variables that change
-// const=variables that change
+// Add JavaScript code for your web site here and call it from index.html.
+const gridContainer = document.querySelector(".grid-container");
+let cards = [];
+let firstCard, secondCard;
+let lockBoard = false;
+let score = 0;
 
-let userProgress = {
-    career: null,
-    friendships: 0,
-    relaxation: 0
-};
+document.querySelector(".score").textContent = score;
 
-function makeChoice(choice) {
-    let storyElement = document.getElementById('story');
-    let feedbackElement = document.getElementById('feedback');
+fetch("./data/cards.json")
+  .then((res) => res.json())
+  .then((data) => {
+    cards = [...data, ...data];
+    shuffleCards();
+    generateCards();
+  });
 
-    if (choice === 1) {
-        userProgress.career = 'Engineer';
-        storyElement.innerHTML = "Your Sim starts a career as an engineer. They're excited, but now they’re super busy!";
-        feedbackElement.innerHTML = "You have a job! But will it make you happy?";
-    } else if (choice === 2) {
-        userProgress.friendships++;
-        storyElement.innerHTML = "Your Sim goes to the park and meets a new friend!";
-        feedbackElement.innerHTML = "Friendship level +1! Will they become best friends?";
-    } else if (choice === 3) {
-        userProgress.relaxation++;
-        storyElement.innerHTML = "Your Sim decides to watch TV and relax for a while.";
-        feedbackElement.innerHTML = "Relaxation level +1! But too much TV could affect your Sim's health!";
-    }
-
-    // Give more choices based on progress
-    setTimeout(function() {
-        showNextChoices();
-    }, 2000);
+function shuffleCards() {
+  let currentIndex = cards.length,
+    randomIndex,
+    temporaryValue;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = cards[currentIndex];
+    cards[currentIndex] = cards[randomIndex];
+    cards[randomIndex] = temporaryValue;
+  }
 }
 
-function showNextChoices() {
-    let choicesDiv = document.getElementById('choices');
-    choicesDiv.innerHTML = '';
+function generateCards() {
+  for (let card of cards) {
+    const cardElement = document.createElement("div");
+    cardElement.classList.add("card");
+    cardElement.setAttribute("data-name", card.name);
+    cardElement.innerHTML = `
+      <div class="front">
+        <img class="front-image" src=${card.image} />
+      </div>
+      <div class="back"></div>
+    `;
+    gridContainer.appendChild(cardElement);
+    cardElement.addEventListener("click", flipCard);
+  }
+}
 
-    if (userProgress.career && userProgress.friendships < 2) {
-        choicesDiv.innerHTML += '<button onclick="makeChoice(2)">Make Another Friend</button>';
-    }
-    if (userProgress.relaxation < 2) {
-        choicesDiv.innerHTML += '<button onclick="makeChoice(3)">Relax More</button>';
-    }
-    if (userProgress.career === 'Engineer' && userProgress.friendships > 1) {
-        choicesDiv.innerHTML += '<button onclick="makeChoice(1)">Work Harder</button>';
-    }
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add("flipped");
+
+  if (!firstCard) {
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+  score++;
+  document.querySelector(".score").textContent = score;
+  lockBoard = true;
+
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  setTimeout(() => {
+    firstCard.classList.remove("flipped");
+    secondCard.classList.remove("flipped");
+    resetBoard();
+  }, 1000);
+}
+
+function resetBoard() {
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+}
+
+function restart() {
+  resetBoard();
+  shuffleCards();
+  score = 0;
+  document.querySelector(".score").textContent = score;
+  gridContainer.innerHTML = "";
+  generateCards();
 }
 
