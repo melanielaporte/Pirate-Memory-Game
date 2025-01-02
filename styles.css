@@ -1,53 +1,83 @@
-/* COMMENT */ 
-/* font: family(800) weight(12px) size(Georgia, serif) */ 
-/* border: width(3px) style(dashed) color(red) */ 
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #A3D2CA;
-    color: #4F4F4F;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.game-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  background-image: url("assets/background.png");
+  color: white;
 }
 
 h1 {
-    font-size: 2rem;
-    color: #D9A7B0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
 }
 
-button {
-    background-color: orange;
-    border: 2px solid #4F4F4F;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #4F4F4F;
-    color: white;
-}
-
-#choices {
-    margin-top: 20px;
-}
-
-#feedback {
-    margin-top: 20px;
+p {
+    text-align: center;
+    font-size: 30px;
     font-weight: bold;
 }
 
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    padding: 8px 16px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: white;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: calc(140px / 2 * 3);
+  width: 140px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  width: 200px;
+  height: 220px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+  background-size: cover;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background-image: url('assets/cardback.png');
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
 
 .card .front {
   transform: rotateY(180deg);
