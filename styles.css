@@ -67,7 +67,7 @@ body {
  }
  
  .card .back {
-  background-image: url("assets/coinback.png");
+  background-image: url("assets/cardback.png");
   background-position: center center;
   background-size: cover;
   backface-visibility: hidden;
