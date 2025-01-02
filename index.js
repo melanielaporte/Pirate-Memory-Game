@@ -98,4 +98,3 @@ function restart() {
   gridContainer.innerHTML = "";
   generateCards();
 }
-
