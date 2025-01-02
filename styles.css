@@ -1,8 +1,5 @@
 body {
-  min-height: 100vh;
-  min-width: 100vh;
   background-image: url("assets/background.png");
-  
   color: white;
 }
 
@@ -60,13 +57,13 @@ p {
 }
 
 .front, .back {
-    backface-visibility: hidden;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .card .front {
@@ -85,4 +82,3 @@ p {
 .card .front {
   transform: rotateY(180deg);
 }
- 
