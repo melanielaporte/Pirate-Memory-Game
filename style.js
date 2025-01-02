@@ -29,15 +29,12 @@ function shuffleCards() {
 
 function generateCards() {
   for (let card of cards) {
-    console.log("Generating card:", card); // Log the card data for debugging
-
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
-
     cardElement.innerHTML = `
       <div class="front">
-        <img class="front-image" src="${card.image}" alt="${card.name}">
+        <img class="front-image" src=${card.image} />
       </div>
       <div class="back"></div>
     `;
@@ -51,7 +48,6 @@ function flipCard() {
   if (this === firstCard) return;
 
   this.classList.add("flipped");
-  console.log("Card flipped:", this);  // Log to check
 
   if (!firstCard) {
     firstCard = this;
@@ -59,6 +55,8 @@ function flipCard() {
   }
 
   secondCard = this;
+  score++;
+  document.querySelector(".score").textContent = score;
   lockBoard = true;
 
   checkForMatch();
@@ -67,13 +65,7 @@ function flipCard() {
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
-  if (isMatch) {
-    score++; // Increment score only for a match
-    document.querySelector(".score").textContent = score;
-    disableCards();
-  } else {
-    unflipCards();
-  }
+  isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
