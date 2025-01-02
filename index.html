@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pireate's Booty Memory Card Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <h1>Pirate's Booty Memory Game</h1>
-    <div class="grid-container">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Size Sims</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Welcome to Snack Size Sims</h1>
+        <p id="story">You’ve just created a new Sim. What will they do first?</p>
+        <div id="choices">
+            <button onclick="makeChoice(1)">Start a Career</button>
+            <button onclick="makeChoice(2)">Find a Friend</button>
+            <button onclick="makeChoice(3)">Relax and Watch TV</button>
+        </div>
+        <div id="feedback"></div>
     </div>
-    <p>Score: <span class="score"></span></p>
-    <div class="actions">
-        <button onclick="restart()">Restart</button>
-    </div>
-    <script src="index.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
