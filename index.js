@@ -1,4 +1,3 @@
-// Add JavaScript code for your web site here and call it from index.html.
 const gridContainer = document.querySelector(".grid-container");
 let cards = [];
 let firstCard, secondCard;
