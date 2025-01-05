@@ -9,9 +9,13 @@ body {
 h1 {
     text-align: center;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 50px; 
+    font-family: "Pirata One", serif;
+    color: green;
 }
-
+h1 {
+ 
+}
 p {
     text-align: center;
     font-size: 30px;
