@@ -4,7 +4,6 @@ A pirate themed tiny game that calculates how many moves it takes for a player t
 
 ### Tech stack
 HTML, CSS, and JavaScript.
-Adobe Illustrator and Blender for the graphics.
 
 ## [Play here](https://editting-lively-shell-121.vscodeedu.app/)
 
