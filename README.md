@@ -2,8 +2,7 @@
 
 A small pirate-themed memory card game that tracks how many moves it takes for a player to complete the game. Designed to demonstrate interactivity and front-end coding skills in HTML, CSS, and JavaScript.
 
-## [Play the game here:](https://editting-lively-shell-121.vscodeedu.app/)
-https://vscodeedu.com/fIVaXkK8SG0lQdf27DOc
+## [Play the game here:](https://vscodeedu.com/fIVaXkK8SG0lQdf27DOc)
 
 ![ezgif-7-96daf9a698](https://github.com/user-attachments/assets/f16a0994-ddb9-4e25-87e8-8f3a3d6874a0)
 
