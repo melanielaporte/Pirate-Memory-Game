@@ -4,6 +4,7 @@ A small pirate-themed memory card game that tracks how many moves it takes for a
 
 ## [Play the game here:](https://editting-lively-shell-121.vscodeedu.app/)
 
+
 ![ezgif-7-96daf9a698](https://github.com/user-attachments/assets/f16a0994-ddb9-4e25-87e8-8f3a3d6874a0)
 
 ## Tech stack
